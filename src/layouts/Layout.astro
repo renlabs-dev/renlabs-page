@@ -1,0 +1,43 @@
+---
+import Header from "../components/Header.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Ren Labs</title>
+  </head>
+  <body class="bg-black text-white">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="text-center">
+        <Header />
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: hsl(240 5% 7%);
+      border-radius: 2px;
+      margin: 1px 0 1px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: hsl(240 5% 64.9%);
+      border-radius: 2px;
+    }
+  }
+</style>

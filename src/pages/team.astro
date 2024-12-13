@@ -1,0 +1,32 @@
+---
+import Back from "../components/Back.astro";
+import Layout from "../layouts/Layout.astro";
+
+const team = [
+  { name: "Kelvin", github: "steinerkelvin" },
+  { name: "Jairo", github: "PsicoThePato" },
+  { name: "Gabi", github: "aripiprazole" },
+  { name: "João", github: "devwckd" },
+  { name: "Rad", github: "rad2520" },
+  { name: "Ed", github: "EdSDR" },
+  { name: "Vinicius", github: "vinicius-sacramento" },
+  { name: "Honza", github: "Supremesource" },
+  { name: "Gabriel", github: "gabrielcipriano" },
+  { name: "Luiz", github: "saiintbrisson" },
+  { name: "Davi", github: "DaviPtrs" },
+  { name: "Kingu", github: "kings177" },
+];
+---
+
+<Layout>
+  <div class="flex flex-wrap justify-center w-[24em] gap-2 md:gap-4 my-8">
+    {
+      team.map(({ name, github }) => (
+        <a href={`https://github.com/${github}`} class="hover:underline">
+          {name}
+        </a>
+      ))
+    }
+  </div>
+  <Back />
+</Layout>
