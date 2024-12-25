@@ -1,18 +1,6 @@
 ---
 import Back from "../components/Back.astro";
 import Layout from "../layouts/Layout.astro";
-
-type Paragraph = string | { type: "divider" };
-
-const paragraphs: Paragraph[] = [
-  { type: "divider" },
-
-  "Ren Labs is a research group passionate in this field. We are dedicated to making research and development contributions, self-funded through protocol participation.",
-
-  "Our primary hands-on focus is currently directed towards the Bittensor and Commune protocols. We see Bittensor as the bleeding edge of decentralized computational economics, closely following its evolution with great confidence in its direction.",
-
-  "We are building Torus, a self-assembling agentic p2p organism.",
-];
 ---
 
 <Layout>
@@ -50,15 +38,9 @@ const paragraphs: Paragraph[] = [
     </p>
     <hr class="w-1/3 mx-auto border-t border-white border-opacity-50" />
     <p>
-      Ren Labs is a research group passionate in this field. We are dedicated to
+      Renlabs is a research group passionate in this field. We are dedicated to
       making research and development contributions, self-funded through
       protocol participation.
-    </p>
-    <p>
-      Our primary hands-on focus is currently directed towards the Bittensor and
-      Commune protocols. We see Bittensor as the bleeding edge of decentralized
-      computational economics, closely following its evolution with great
-      confidence in its direction.
     </p>
     <p>We are building Torus, a self-assembling agentic p2p organism.</p>
   </div>
