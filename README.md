@@ -1,4 +1,4 @@
-# Ren Labs Landing Page
+# RENLABS Landing Page
 
 ## 🚀 Project Structure
 
