@@ -1,16 +1,30 @@
 ---
 import { Image } from "astro:assets";
 import fish from "../assets/fish.svg";
+import fish2 from "../assets/fish2.svg";
+import fish3 from "../assets/fish3.svg";
 import Layout from "../layouts/Layout.astro";
+
+const images = [fish, fish2, fish3];
 ---
 
 <Layout>
-  <Image
-    alt="fish"
-    src={fish}
-    loading="eager"
-    class="w-[18em] h-[18em] md:w-[26em] md:h-[26em] border border-white mx-auto"
-  />
+  <div
+    id="imageCarousel"
+    class="relative w-[18em] h-[18em] md:w-[26em] md:h-[26em] mx-auto"
+  >
+    {
+      images.map((img, index) => (
+        <Image
+          alt={`Image ${index + 1}`}
+          src={img}
+          loading="eager"
+          class={`w-full h-full border border-white absolute top-0 left-0 transition-opacity duration-300 ${index === 0 ? "opacity-100" : "opacity-0"}`}
+          data-index={index}
+        />
+      ))
+    }
+  </div>
   <nav class="mt-6 space-x-2 md:space-x-4 md:text-lg text-sm font-bold">
     <a href="/information" class="hover:underline">INFORMATION</a>
     <a href="/research" class="hover:underline">RESEARCH</a>
@@ -18,3 +32,19 @@ import Layout from "../layouts/Layout.astro";
     <a href="/contact" class="hover:underline">CONTACT</a>
   </nav>
 </Layout>
+
+<script>
+  const carousel = document.getElementById("imageCarousel");
+  const images = carousel!.querySelectorAll("img");
+  let currentIndex = 0;
+
+  function showNextImage() {
+    images[currentIndex].classList.remove("opacity-100");
+    images[currentIndex].classList.add("opacity-0");
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.remove("opacity-0");
+    images[currentIndex].classList.add("opacity-100");
+  }
+
+  carousel!.addEventListener("click", showNextImage);
+</script>
