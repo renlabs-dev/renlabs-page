@@ -11,13 +11,13 @@ const team = [
   { name: "Timo", github: "rad2520" },
   { name: "Honza", github: "functor-flow" },
   { name: "Oliver", github: "Boscop" },
-  { name: "theSeeker", github: "the-seeker0"},
+  { name: "Seeker", github: "the-seeker0" },
 ];
 ---
 
 <Layout>
   <div
-    class="flex flex-wrap justify-center w-[30em] gap-2 md:gap-4 my-8 md:mx-auto mx-4"
+    class="grid grid-cols-3 place-items-center gap-x-6 gap-y-3 my-8 mx-4 md:mx-auto max-w-[30em]"
   >
     {
       team.map(({ name, github }) => (
