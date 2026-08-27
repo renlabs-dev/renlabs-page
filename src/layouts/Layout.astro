@@ -1,5 +1,7 @@
 ---
 import Header from "../components/Header.astro";
+
+const { subtitle = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -9,18 +11,24 @@ import Header from "../components/Header.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap"
-      rel="stylesheet"
-    />
+    {
+      subtitle && (
+        <>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap"
+            rel="stylesheet"
+          />
+        </>
+      )
+    }
     <title>RENLABS</title>
   </head>
   <body class="bg-black text-white">
     <div class="flex items-center justify-center min-h-screen">
       <div class="text-center">
-        <Header />
+        <Header subtitle={subtitle} />
         <slot />
       </div>
     </div>
