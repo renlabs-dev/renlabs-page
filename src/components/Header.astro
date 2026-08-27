@@ -1,6 +1,10 @@
-<div class="text-center">
+---
+const { subtitle = false } = Astro.props;
+---
+
+<div class="text-center mb-4">
   <h1 class="text-4xl font-bold">RENLABS</h1>
-  <h3 class="mb-4 subtitle">order from chaos</h3>
+  {subtitle && <h3 class="subtitle">order from chaos</h3>}
 </div>
 
 <style>
@@ -10,6 +14,5 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    word-spacing: 0;
   }
 </style>
